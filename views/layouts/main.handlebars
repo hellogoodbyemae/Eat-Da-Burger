@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
+
+	<head>
+		<meta charset="UTF-8">
 		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>MVC With Cats!</title>
+		<title>Eat-Da-Burger!</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		{{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
 		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/assets/js/cats.js"></script>
+		<script src="/assets/js/burgers.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	</head>
+
 	<body>
-		{{{ body }}}
-	</body>
+
+    <div class="container-fluid">
+
+    {{!-- <center>
+      <div class="row">
+      <img src="" alt="">
+    <div class="jumbotron"> --}}
+
+    <h1>Eat-Da-Burger!</h1>      
+    <p>Choose a Burger from the list. Then devour it. <br> 
+    Or, Enter a Burger you want to eat.</p>    
+    </center>
+      <br>
+
+      {{{body}}}
+      <br><br>
+
+      <form action="burger/create" method="POST"> 
+
+        <div class="row">
+          <div class="col-md-3"></div> 
+          <div class="form-group col-md-6">
+            <center><label for="new_burger" class="submitFont">Add new burger!</label></center>
+            <textarea class="form-control" type="text" columns="6" rows="1" id="new_burger required value="" name="burger_name"></textarea>
+          </div>
+          <div class="col-md-3"></div> 
+        </div>
+
+        <center>
+          <button id="submit-button" type="submit" class="btn btn-danger">Make my Burger!</button>
+        </center>
+
+      </form>
+      <br>
+
+    </div>
+
+  </body>
+
 </html>

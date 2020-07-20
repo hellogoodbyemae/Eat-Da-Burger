@@ -1,0 +1,55 @@
+body {
+  background-color: #ff9900;
+}
+.jumbotron {
+  background-image: url("../img/Yummy-Burger-PNG.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: #000000;
+  color: #ffffff;
+  margin-top: 3%;
+}
+#newburger {
+  color: #5c5c5c;
+}
+
+.btn-success {
+  background-color: #5c5c5c;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.btn-warning {
+  background-color: #000000;
+  border-color: #ffffff;
+  color: #ffffff;
+  padding: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-danger {
+  background-color: #000000;
+  border-color: #ffffff;
+  color: #ffffff;
+  padding: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+#leftside {
+  background-color: #5c5c5c;
+  color: white;
+  text-align: center;
+  font-size: 1.3em;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#rightside {
+  background-color: #5c5c5c;
+  color: white;
+  text-align: center;
+  font-size: 1.3em;
+  padding: 10px;
+  margin-bottom: 10px;
+}

@@ -1,42 +1,56 @@
-<div class="row">
-  <center>
+<div class="container">
 
-    <div class="col-md-4">
-      <h3 class="submitFont">Burgers Available</h3>
+  <div class="jumbotron">
+    <h1>Eat Da Burger!</h1>
+    <h2>Make Your Burger</h2>
+    <panel>
+      <form class="creat-form">
+        <div class="form-group">
+          <label for="newburger">Order A Burger</label>
+          <input type="text" id="newburger" name="burger">
+          <button type="submit" class="btn btn-success" id="addburger">
+            ADD
+          </button>
+        </div>
+      </form>
+    </panel>
+  </div>
 
-      <div id="burgersAvailable">
-        {{#each burgers}}
-          {{#unless devoured}}
-          <form action="burger/eat/{{id}}" method="POST">
-            <div class="input-group">
-              <li class="form-control">{{id}}. {{burger_name}}</li>
-                <span class="input-group-btn">
-                  <button class="btn btn-success devour-button" type="submit">Devour It!</button>
-                </span>
-            </div>
-          </form>
-          {{/unless}}
-        {{/each}}
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="leftside"><strong>Ordered Burgers</strong></div>
+        <div class="panel-body">
+          <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+            <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
+              data-newDevoured={{devour}}></button>
+            <br>
+            {{/unless}}
+            {{/each}}
+          </ul>>
+        </div>
       </div>
-
     </div>
 
-    <div class="col-md-4"></div> 
-
-    <div class="col-md-4">
-      <h3 class="submitFont">Burgers Devoured</h3>
-
-      <div id="alreadyEaten">
-        {{#each burgers}}
-          {{#if this.devoured}}
-            <div class="input-group">
-              <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
-            </div>
-          {{/if}}
-        {{/each}}
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="rightside"><strong>Devoured Burgers</strong></div>
+        <div class="panel-body">
+          <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+            <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
+              data-newDevoured={{devour}}></button>
+            <br>
+            {{/if}}
+            {{/each}}
+          </ul>>
+        </div>
       </div>
-
     </div>
-    
-  </center>
+  </div>
 </div>
